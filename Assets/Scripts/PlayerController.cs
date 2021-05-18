@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Collider2D col;
 
+    Material m_Material;
+
     private void Awake()
     {
         playerControls = new PlayerControls();
@@ -32,6 +34,10 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Fetch the Material from the Renderer of the GameObject
+        m_Material = GetComponent<Renderer>().material;
+        print("Materials " + Resources.FindObjectsOfTypeAll(typeof(Material)).Length);
+
         playerControls.Land.Jump.performed += _ => jump();
     }
 
@@ -56,6 +62,9 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Grounded True = Jump!");
             rb.AddForce(new Vector2(0, jumpSpeed), ForceMode2D.Impulse);
+
+            Debug.Log("Changing color => Green");
+            m_Material.color = Color.green;
         }
         else
         {
