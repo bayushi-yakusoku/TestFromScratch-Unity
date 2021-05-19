@@ -1,24 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
-public class PlayerController : MonoBehaviour
+[RequireComponent(typeof(Rigidbody2D))]
+public class PlayerCube : MonoBehaviour
 {
     [SerializeField] private float speed, jumpSpeed;
-    [SerializeField] private LayerMask ground;
+    [SerializeField] private LayerMask layerGround;
+    [SerializeField] private Renderer rendererBody;
+    [SerializeField] private Collider2D colliderBody;
 
     private PlayerControls playerControls;
-    private Rigidbody2D rb;
-    private Collider2D col;
+    private Rigidbody2D rigidBody;
 
-    Material m_Material;
+    private Material materialBody;
 
     private void Awake()
     {
         playerControls = new PlayerControls();
-        rb = GetComponent<Rigidbody2D>();
-        col = GetComponent<Collider2D>();
+        Assert.IsNotNull(playerControls, "playerControls is null");
 
+        rigidBody = GetComponent<Rigidbody2D>();
+        Assert.IsNotNull(rigidBody, "rigidBody2D is null");
+
+        Assert.IsNotNull(rendererBody, "rendererBody is null");
+        Assert.IsNotNull(colliderBody, "colliderBody is null");
+
+        materialBody = rendererBody.material;
+        Assert.IsNotNull(materialBody, "materialBody is null");
     }
 
     private void OnEnable()
@@ -34,9 +44,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Fetch the Material from the Renderer of the GameObject
-        m_Material = GetComponent<Renderer>().material;
-        print("Materials " + Resources.FindObjectsOfTypeAll(typeof(Material)).Length);
+        materialBody.color = Color.green;
 
         playerControls.Land.Jump.performed += _ => jump();
     }
@@ -44,14 +52,14 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded()
     {
         Vector2 topLeft = transform.position;
-        topLeft.x -= col.bounds.extents.x;
-        topLeft.y += col.bounds.extents.y;
+        topLeft.x -= colliderBody.bounds.extents.x;
+        topLeft.y += colliderBody.bounds.extents.y;
 
         Vector2 bottomRight = transform.position;
-        bottomRight.x += col.bounds.extents.x;
-        bottomRight.y -= col.bounds.extents.y;
+        bottomRight.x += colliderBody.bounds.extents.x;
+        bottomRight.y -= colliderBody.bounds.extents.y;
 
-        return Physics2D.OverlapArea(topLeft, bottomRight, ground);
+        return Physics2D.OverlapArea(topLeft, bottomRight, layerGround);
     }
 
     private void jump()
@@ -61,14 +69,15 @@ public class PlayerController : MonoBehaviour
         if (isGrounded())
         {
             Debug.Log("Grounded True = Jump!");
-            rb.AddForce(new Vector2(0, jumpSpeed), ForceMode2D.Impulse);
+            rigidBody.AddForce(new Vector2(0, jumpSpeed), ForceMode2D.Impulse);
 
             Debug.Log("Changing color => Green");
-            m_Material.color = Color.green;
+            materialBody.color = Color.blue;
         }
         else
         {
             Debug.Log("Grounded False = No Jump!");
+            materialBody.color = Color.red;
         }
     }
 
