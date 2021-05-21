@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -10,11 +11,14 @@ public class PlayerCube : MonoBehaviour
     [SerializeField] private LayerMask layerGround;
     [SerializeField] private Renderer rendererBody;
     [SerializeField] private Collider2D colliderBody;
+    [SerializeField] private Collider2D colliderGround;
 
     private PlayerControls playerControls;
     private Rigidbody2D rigidBody;
 
     private Material materialBody;
+
+    private bool isGrounded = false;
 
     private void Awake()
     {
@@ -26,6 +30,7 @@ public class PlayerCube : MonoBehaviour
 
         Assert.IsNotNull(rendererBody, "rendererBody is null");
         Assert.IsNotNull(colliderBody, "colliderBody is null");
+        Assert.IsNotNull(colliderGround, "colliderGround is null");
 
         materialBody = rendererBody.material;
         Assert.IsNotNull(materialBody, "materialBody is null");
@@ -49,24 +54,24 @@ public class PlayerCube : MonoBehaviour
         playerControls.Land.Jump.performed += _ => jump();
     }
 
-    private bool isGrounded()
-    {
-        Vector2 topLeft = transform.position;
-        topLeft.x -= colliderBody.bounds.extents.x;
-        topLeft.y += colliderBody.bounds.extents.y;
+    //private bool isGrounded()
+    //{
+    //    Vector2 topLeft = transform.position;
+    //    topLeft.x -= colliderBody.bounds.extents.x;
+    //    topLeft.y += colliderBody.bounds.extents.y;
 
-        Vector2 bottomRight = transform.position;
-        bottomRight.x += colliderBody.bounds.extents.x;
-        bottomRight.y -= colliderBody.bounds.extents.y;
+    //    Vector2 bottomRight = transform.position;
+    //    bottomRight.x += colliderBody.bounds.extents.x;
+    //    bottomRight.y -= colliderBody.bounds.extents.y;
 
-        return Physics2D.OverlapArea(topLeft, bottomRight, layerGround);
-    }
+    //    return Physics2D.OverlapArea(topLeft, bottomRight, layerGround);
+    //}
 
     private void jump()
     {
         Debug.Log("Jump Pressed!");
 
-        if (isGrounded())
+        if (isGrounded)
         {
             Debug.Log("Grounded True = Jump!");
             rigidBody.AddForce(new Vector2(0, jumpSpeed), ForceMode2D.Impulse);
@@ -92,5 +97,19 @@ public class PlayerCube : MonoBehaviour
         currentPosition.x += movementInput * speed * Time.deltaTime;
 
         transform.position = currentPosition;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(MethodBase.GetCurrentMethod().Name + "(): ...");
+        materialBody.color = Color.green;
+        isGrounded = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Debug.Log(MethodBase.GetCurrentMethod().Name + "(): ...");
+        materialBody.color = Color.blue;
+        isGrounded = false;
     }
 }
