@@ -18,8 +18,8 @@ public class PlayerUfo : MonoBehaviour
     private Material materialBody;
     private PlayerInput playerInput;
 
-    private float thrust = 0f;
-    private float direction = 0f;
+    private float _thrust = 0f;
+    private float _direction = 0f;
 
     private void Awake()
     {
@@ -41,7 +41,6 @@ public class PlayerUfo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -53,11 +52,11 @@ public class PlayerUfo : MonoBehaviour
     private void FixedUpdate()
     {
 
-        Vector3 rotate = new Vector3(0, 0, -direction);
+        Vector3 rotate = new Vector3(0, 0, -_direction);
 
         transform.Rotate(rotate * rotateSpeed);
 
-        rigidBody.AddRelativeForce(new Vector2(0, 1) * thrust * rotor);
+        rigidBody.AddRelativeForce(new Vector2(0, 1) * _thrust * rotor);
     }
 
     private void OnEnable()
@@ -85,30 +84,41 @@ public class PlayerUfo : MonoBehaviour
 
     private void Rotate_canceled(InputAction.CallbackContext context)
     {
-        direction = 0f;
-        Debug.Log(MethodBase.GetCurrentMethod().Name + "(): Direction: " + direction);
+        _direction = 0f;
+        Debug.Log(MethodBase.GetCurrentMethod().Name + "(): Direction: " + _direction);
     }
 
     private void Thrust_canceled(InputAction.CallbackContext context)
     {
-        thrust = 0f;
-        Debug.Log(MethodBase.GetCurrentMethod().Name + "(): Read Value" + thrust);
+        _thrust = 0f;
+        Debug.Log(MethodBase.GetCurrentMethod().Name + "(): Read Value" + _thrust);
     }
 
     private void Rotate_performed(InputAction.CallbackContext context)
     {
-        direction = context.ReadValue<float>();
-        Debug.Log(MethodBase.GetCurrentMethod().Name + "(): Direction: " + direction);
+        _direction = context.ReadValue<float>();
+        Debug.Log(MethodBase.GetCurrentMethod().Name + "(): Direction: " + _direction);
     }
 
     private void Thrust_performed(InputAction.CallbackContext context)
     {
-        thrust = context.ReadValue<float>();
-        Debug.Log(MethodBase.GetCurrentMethod().Name + "(): Read Value" + thrust);
+        _thrust = context.ReadValue<float>();
+        Debug.Log(MethodBase.GetCurrentMethod().Name + "(): Read Value" + _thrust);
     }
 
     private void Fire_performed(InputAction.CallbackContext context)
     {
         Debug.Log(MethodBase.GetCurrentMethod().Name + "(): ...");
     }
+
+    public float thrust
+    {
+        get { return _thrust; } 
+    }
+
+    public float direction
+    {
+        get { return _direction; }
+    }
+
 }
