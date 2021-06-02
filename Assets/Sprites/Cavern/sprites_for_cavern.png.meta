@@ -1,0 +1,396 @@
+fileFormatVersion: 2
+guid: e1ee3a180c8ea4f48a711106912697d0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4497675062697991771
+    second: sprites_for_cavern_0
+  - first:
+      213: -2848316292548659835
+    second: sprites_for_cavern_1
+  - first:
+      213: -5746485916327200909
+    second: sprites_for_cavern_2
+  - first:
+      213: -4643855820486567924
+    second: sprites_for_cavern_3
+  - first:
+      213: 2766507189469174706
+    second: sprites_for_cavern_4
+  - first:
+      213: 8850149755507223098
+    second: sprites_for_cavern_5
+  - first:
+      213: -1240897251040388447
+    second: sprites_for_cavern_6
+  - first:
+      213: 2183872740450513917
+    second: sprites_for_cavern_7
+  - first:
+      213: -7447928691867582654
+    second: sprites_for_cavern_8
+  - first:
+      213: -4609786613653997669
+    second: sprites_for_cavern_9
+  - first:
+      213: 763129120259778291
+    second: sprites_for_cavern_10
+  - first:
+      213: -3457118141972479327
+    second: sprites_for_cavern_11
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sprites_for_cavern_0
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 958
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5e1f3bc3a3fa6e30800000000000000
+      internalID: 4497675062697991771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprites_for_cavern_1
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 958
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 585fda64c6fb878d0800000000000000
+      internalID: -2848316292548659835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprites_for_cavern_2
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 958
+        width: 192
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 15, y: 0, z: 15, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 377388a51816040b0800000000000000
+      internalID: -5746485916327200909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprites_for_cavern_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 921
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0894c74cb5bd8fb0800000000000000
+      internalID: -4643855820486567924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprites_for_cavern_4
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 921
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bbdfd891ab946620800000000000000
+      internalID: 2766507189469174706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprites_for_cavern_5
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 901
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3aa402005c02da70800000000000000
+      internalID: 8850149755507223098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprites_for_cavern_6
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 908
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aa9af4568277cee0800000000000000
+      internalID: -1240897251040388447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprites_for_cavern_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 897
+        width: 32
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df33631dfacae4e10800000000000000
+      internalID: 2183872740450513917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprites_for_cavern_8
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 897
+        width: 32
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24ffac8c054a3a890800000000000000
+      internalID: -7447928691867582654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprites_for_cavern_9
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 855
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b977dc2af7fb600c0800000000000000
+      internalID: -4609786613653997669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprites_for_cavern_10
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 855
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f627d244ed279a00800000000000000
+      internalID: 763129120259778291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprites_for_cavern_11
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 856
+        width: 144
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 11, y: 0, z: 11, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a20c21dd59d500d0800000000000000
+      internalID: -3457118141972479327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
