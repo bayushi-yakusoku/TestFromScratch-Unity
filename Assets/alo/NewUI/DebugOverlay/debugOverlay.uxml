@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement>
+        <ui:TextField picking-mode="Ignore" label="Rotation" value="filler text" text="filler text" />
+        <ui:TextField picking-mode="Ignore" label="Poussée" value="filler text" text="filler text" />
+        <ui:TextField picking-mode="Ignore" label="Vitesse" value="filler text" text="filler text" />
+    </ui:VisualElement>
+</ui:UXML>
