@@ -21,6 +21,8 @@ public class PlayerUfo : MonoBehaviour
     private float _thrust = 0f;
     private float _direction = 0f;
 
+    private Vector3 respawnPoint;
+
     private void Awake()
     {
         playerControls = new PlayerControls();
@@ -36,6 +38,8 @@ public class PlayerUfo : MonoBehaviour
         Assert.IsNotNull(materialBody, "materialBody is null");
 
         setupActionEvents();
+
+        respawnPoint = transform.position;
     }
 
     // Start is called before the first frame update
@@ -121,4 +125,13 @@ public class PlayerUfo : MonoBehaviour
         get { return _direction; }
     }
 
+    public void respawn()
+    {
+        Debug.Log("Respawn Ufo!");
+        rigidBody.velocity = Vector3.zero;
+        rigidBody.angularVelocity = 0f;
+
+        transform.position = respawnPoint;
+        transform.forward = Vector3.zero;
+    }
 }

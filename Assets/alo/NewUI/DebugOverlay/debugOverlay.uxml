@@ -1,7 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:VisualElement>
-        <ui:TextField picking-mode="Ignore" label="Rotation" value="filler text" text="filler text" />
-        <ui:TextField picking-mode="Ignore" label="Poussée" value="filler text" text="filler text" />
-        <ui:TextField picking-mode="Ignore" label="Vitesse" value="filler text" text="filler text" />
+    <ui:VisualElement style="-unity-background-image-tint-color: rgba(255, 255, 255, 0); background-color: rgba(0, 0, 0, 0);">
+        <ui:TextField picking-mode="Ignore" label="Rotation" value="filler text" text="filler text" name="textField-Rotation" style="-unity-font-style: bold; height: 18px; color: rgb(255, 0, 38); font-size: 12px; -unity-text-align: upper-left;" />
+        <ui:TextField picking-mode="Ignore" label="Poussée" value="filler text" text="filler text" name="textField-Thrust" />
+        <ui:TextField picking-mode="Ignore" label="Vitesse" value="filler text" text="filler text" name="textField-Speed" />
     </ui:VisualElement>
+    <ui:Button text="Respawn" display-tooltip-when-elided="true" name="button-Respawn" style="height: 50px; width: 107px;" />
 </ui:UXML>
