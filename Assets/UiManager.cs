@@ -10,6 +10,8 @@ public class UiManager : MonoBehaviour
     [SerializeField] private UIDocument debugOverlay;
 
     private TextField rotation;
+    private TextField playerName;
+
     private Button respawn;
 
     private void OnEnable()
@@ -17,8 +19,10 @@ public class UiManager : MonoBehaviour
         var root = debugOverlay.rootVisualElement;
 
         rotation = root.Q<TextField>("textField-Rotation");
-        respawn = root.Q<Button>("button-Respawn");
 
+        playerName = root.Q<TextField>("textField-PlayerName");
+
+        respawn = root.Q<Button>("button-Respawn");
         respawn.clickable.clicked += () => playerUfo.respawn();
     }
 
@@ -32,5 +36,6 @@ public class UiManager : MonoBehaviour
     void Update()
     {
         rotation.value = "" + playerUfo.direction;
+        playerName.value = "" + playerUfo.playerName;
     }
 }

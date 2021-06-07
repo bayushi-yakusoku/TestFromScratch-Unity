@@ -21,6 +21,8 @@ public class PlayerUfo : MonoBehaviour
     private float _thrust = 0f;
     private float _direction = 0f;
 
+    private string _playerName = "Player1";
+
     private Vector3 respawnPoint;
 
     private void Awake()
@@ -123,6 +125,12 @@ public class PlayerUfo : MonoBehaviour
     public float direction
     {
         get { return _direction; }
+    }
+
+    public string playerName
+    {
+        get => _playerName;
+        set => _playerName = playerName;
     }
 
     public void respawn()
