@@ -21,6 +21,8 @@ public class UiManager : MonoBehaviour
         rotation = root.Q<TextField>("textField-Rotation");
 
         playerName = root.Q<TextField>("textField-PlayerName");
+        //playerName.RegisterValueChangedCallback(ctx => Debug.Log("New value: " + ctx.newValue));
+        playerName.RegisterValueChangedCallback(this.playerNameUpdate);
 
         respawn = root.Q<Button>("button-Respawn");
         respawn.clickable.clicked += () => playerUfo.respawn();
@@ -29,13 +31,19 @@ public class UiManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerName.value = "" + playerUfo.playerName;
     }
 
     // Update is called once per frame
     void Update()
     {
         rotation.value = "" + playerUfo.direction;
-        playerName.value = "" + playerUfo.playerName;
+        //playerName.value = "" + playerUfo.playerName;
+    }
+
+    private void playerNameUpdate(ChangeEvent<string> ctx)
+    {
+        Debug.Log("New value: " + ctx.newValue);
+        playerUfo.playerName = ctx.newValue;
     }
 }

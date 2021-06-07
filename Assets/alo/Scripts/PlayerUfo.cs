@@ -114,7 +114,7 @@ public class PlayerUfo : MonoBehaviour
 
     private void Fire_performed(InputAction.CallbackContext context)
     {
-        Debug.Log(MethodBase.GetCurrentMethod().Name + "(): ...");
+        Debug.Log(MethodBase.GetCurrentMethod().Name + "(): " + _playerName + " Open Fire!!!!");
     }
 
     public float thrust
@@ -130,7 +130,7 @@ public class PlayerUfo : MonoBehaviour
     public string playerName
     {
         get => _playerName;
-        set => _playerName = playerName;
+        set => _playerName = value;
     }
 
     public void respawn()
