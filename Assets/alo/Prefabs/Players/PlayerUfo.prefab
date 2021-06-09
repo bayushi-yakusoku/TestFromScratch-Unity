@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5502772051991600195}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 5502772052574013435}
   - component: {fileID: 5502772052574013429}
   - component: {fileID: 5502772052574013430}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerUfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,9 +78,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 3
+  m_LinearDrag: 0.5
+  m_AngularDrag: 0.5
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -162,7 +162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5502772052579175480}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Meshes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5502772052671467711}
   - component: {fileID: 5502772052671467704}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MeshBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,7 +276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5502772053076638812}
   - component: {fileID: 5502772053076638813}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ColliderBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
