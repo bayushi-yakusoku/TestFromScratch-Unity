@@ -13,6 +13,9 @@ public class PlayerUfo : MonoBehaviour
     [SerializeField] private float rotor;
     [SerializeField] private float rotateSpeed;
 
+    [Space(10)]
+    [SerializeField] private PlayerUfoInfo runTimeInfo;
+
     private PlayerControls playerControls;
     private Rigidbody2D rigidBody;
     private Material materialBody;
@@ -52,7 +55,7 @@ public class PlayerUfo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        UpdateInfo();
     }
 
     private void FixedUpdate()
@@ -142,4 +145,19 @@ public class PlayerUfo : MonoBehaviour
         transform.position = respawnPoint;
         transform.forward = Vector3.zero;
     }
+
+    private void UpdateInfo()
+    {
+        runTimeInfo.direction = _direction;
+        runTimeInfo.thrust = _thrust;
+    }
+}
+
+[System.Serializable]
+class PlayerUfoInfo
+{
+    [ReadOnly]
+    public float thrust;
+    [ReadOnly]
+    public float direction;
 }
