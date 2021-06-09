@@ -25,7 +25,7 @@ public class UiManager : MonoBehaviour
         playerName.RegisterValueChangedCallback(this.playerNameUpdate);
 
         respawn = root.Q<Button>("button-Respawn");
-        respawn.clickable.clicked += () => playerUfo.respawn();
+        respawn.clickable.clicked += () => playerUfo.Respawn();
     }
 
     // Start is called before the first frame update

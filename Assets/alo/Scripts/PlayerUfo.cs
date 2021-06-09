@@ -133,7 +133,7 @@ public class PlayerUfo : MonoBehaviour
         set => _playerName = value;
     }
 
-    public void respawn()
+    public void Respawn()
     {
         Debug.Log("Respawn Ufo!");
         rigidBody.velocity = Vector3.zero;
