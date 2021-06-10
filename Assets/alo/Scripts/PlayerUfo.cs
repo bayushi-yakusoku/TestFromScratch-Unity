@@ -42,7 +42,7 @@ public class PlayerUfo : MonoBehaviour
         Assert.IsNotNull(playerInput, "playerInput is null");
         Assert.IsNotNull(materialBody, "materialBody is null");
 
-        setupActionEvents();
+        SetupActionEvents();
 
         respawnPoint = transform.position;
     }
@@ -78,44 +78,44 @@ public class PlayerUfo : MonoBehaviour
         playerControls.Disable();
     }
 
-    private void setupActionEvents()
+    private void SetupActionEvents()
     {
         Debug.Log(MethodBase.GetCurrentMethod().Name + "(): ...");
 
-        playerControls.Ufo.Fire.performed += Fire_performed;
+        playerControls.Ufo.Fire.performed += FirePerformed;
 
-        playerControls.Ufo.Thrust.performed += Thrust_performed;
-        playerControls.Ufo.Thrust.canceled += Thrust_canceled; ;
+        playerControls.Ufo.Thrust.performed += ThrustPerformed;
+        playerControls.Ufo.Thrust.canceled += ThrustCanceled; ;
 
-        playerControls.Ufo.Rotate.performed += Rotate_performed;
-        playerControls.Ufo.Rotate.canceled += Rotate_canceled;
+        playerControls.Ufo.Rotate.performed += RotatePerformed;
+        playerControls.Ufo.Rotate.canceled += RotateCanceled;
     }
 
-    private void Rotate_canceled(InputAction.CallbackContext context)
+    private void RotateCanceled(InputAction.CallbackContext context)
     {
         _direction = 0f;
         Debug.Log(MethodBase.GetCurrentMethod().Name + "(): Direction: " + _direction);
     }
 
-    private void Thrust_canceled(InputAction.CallbackContext context)
+    private void ThrustCanceled(InputAction.CallbackContext context)
     {
         _thrust = 0f;
         Debug.Log(MethodBase.GetCurrentMethod().Name + "(): Read Value" + _thrust);
     }
 
-    private void Rotate_performed(InputAction.CallbackContext context)
+    private void RotatePerformed(InputAction.CallbackContext context)
     {
         _direction = context.ReadValue<float>();
         Debug.Log(MethodBase.GetCurrentMethod().Name + "(): Direction: " + _direction);
     }
 
-    private void Thrust_performed(InputAction.CallbackContext context)
+    private void ThrustPerformed(InputAction.CallbackContext context)
     {
         _thrust = context.ReadValue<float>();
         Debug.Log(MethodBase.GetCurrentMethod().Name + "(): Read Value" + _thrust);
     }
 
-    private void Fire_performed(InputAction.CallbackContext context)
+    private void FirePerformed(InputAction.CallbackContext context)
     {
         Debug.Log(MethodBase.GetCurrentMethod().Name + "(): " + _playerName + " Open Fire!!!!");
     }
