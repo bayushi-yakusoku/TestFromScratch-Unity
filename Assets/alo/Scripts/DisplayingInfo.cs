@@ -31,8 +31,8 @@ public class DisplayingInfo : MonoBehaviour
     {
         string info = "";
         
-        info += "Thrust: " + playerUfo.thrust + "\n";
-        info += "Direction: " + playerUfo.direction + "\n";
+        info += "Thrust: " + playerUfo.Collective + "\n";
+        info += "Direction: " + playerUfo.Cyclic + "\n";
 
         displayBox.text = info;
     }

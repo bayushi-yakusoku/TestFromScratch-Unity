@@ -31,19 +31,19 @@ public class UiManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerName.value = "" + playerUfo.playerName;
+        playerName.value = "" + playerUfo.PlayerName;
     }
 
     // Update is called once per frame
     void Update()
     {
-        rotation.value = "" + playerUfo.direction;
+        rotation.value = "" + playerUfo.Cyclic;
         //playerName.value = "" + playerUfo.playerName;
     }
 
     private void playerNameUpdate(ChangeEvent<string> ctx)
     {
         Debug.Log("New value: " + ctx.newValue);
-        playerUfo.playerName = ctx.newValue;
+        playerUfo.PlayerName = ctx.newValue;
     }
 }

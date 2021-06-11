@@ -151,8 +151,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rendererBody: {fileID: 5502772052671467704}
   colliderBody: {fileID: 5502772053076638813}
-  rotor: 50
-  rotateSpeed: 10
+  enginePower: 50
+  rotateMultiplicator: 5
+  deltaModeDirection: 0
+  maxPitch: 45
+  correctionAngle: 2
+  runTimeInfo:
+    collective: 0
+    cyclic: 0
+    targetPitch: 0
+    pitch: 0
+    correctionPitchActivated: 0
+    correctionPitchTarget: 0
 --- !u!1 &5502772052579175487
 GameObject:
   m_ObjectHideFlags: 0

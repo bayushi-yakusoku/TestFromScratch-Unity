@@ -131,7 +131,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             ""id"": ""98656b0e-af7b-4bb5-9767-6eb37b0f12f8"",
             ""actions"": [
                 {
-                    ""name"": ""Thrust"",
+                    ""name"": ""Throttle"",
                     ""type"": ""Value"",
                     ""id"": ""569bea06-9470-4993-91e8-eba568617ed0"",
                     ""expectedControlType"": ""Analog"",
@@ -196,7 +196,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Manettes"",
-                    ""action"": ""Thrust"",
+                    ""action"": ""Throttle"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -824,7 +824,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Land_Jump = m_Land.FindAction("Jump", throwIfNotFound: true);
         // Ufo
         m_Ufo = asset.FindActionMap("Ufo", throwIfNotFound: true);
-        m_Ufo_Thrust = m_Ufo.FindAction("Thrust", throwIfNotFound: true);
+        m_Ufo_Throttle = m_Ufo.FindAction("Throttle", throwIfNotFound: true);
         m_Ufo_Rotate = m_Ufo.FindAction("Rotate", throwIfNotFound: true);
         m_Ufo_Fire = m_Ufo.FindAction("Fire", throwIfNotFound: true);
         // UI
@@ -930,14 +930,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     // Ufo
     private readonly InputActionMap m_Ufo;
     private IUfoActions m_UfoActionsCallbackInterface;
-    private readonly InputAction m_Ufo_Thrust;
+    private readonly InputAction m_Ufo_Throttle;
     private readonly InputAction m_Ufo_Rotate;
     private readonly InputAction m_Ufo_Fire;
     public struct UfoActions
     {
         private @PlayerControls m_Wrapper;
         public UfoActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Thrust => m_Wrapper.m_Ufo_Thrust;
+        public InputAction @Throttle => m_Wrapper.m_Ufo_Throttle;
         public InputAction @Rotate => m_Wrapper.m_Ufo_Rotate;
         public InputAction @Fire => m_Wrapper.m_Ufo_Fire;
         public InputActionMap Get() { return m_Wrapper.m_Ufo; }
@@ -949,9 +949,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_UfoActionsCallbackInterface != null)
             {
-                @Thrust.started -= m_Wrapper.m_UfoActionsCallbackInterface.OnThrust;
-                @Thrust.performed -= m_Wrapper.m_UfoActionsCallbackInterface.OnThrust;
-                @Thrust.canceled -= m_Wrapper.m_UfoActionsCallbackInterface.OnThrust;
+                @Throttle.started -= m_Wrapper.m_UfoActionsCallbackInterface.OnThrottle;
+                @Throttle.performed -= m_Wrapper.m_UfoActionsCallbackInterface.OnThrottle;
+                @Throttle.canceled -= m_Wrapper.m_UfoActionsCallbackInterface.OnThrottle;
                 @Rotate.started -= m_Wrapper.m_UfoActionsCallbackInterface.OnRotate;
                 @Rotate.performed -= m_Wrapper.m_UfoActionsCallbackInterface.OnRotate;
                 @Rotate.canceled -= m_Wrapper.m_UfoActionsCallbackInterface.OnRotate;
@@ -962,9 +962,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             m_Wrapper.m_UfoActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Thrust.started += instance.OnThrust;
-                @Thrust.performed += instance.OnThrust;
-                @Thrust.canceled += instance.OnThrust;
+                @Throttle.started += instance.OnThrottle;
+                @Throttle.performed += instance.OnThrottle;
+                @Throttle.canceled += instance.OnThrottle;
                 @Rotate.started += instance.OnRotate;
                 @Rotate.performed += instance.OnRotate;
                 @Rotate.canceled += instance.OnRotate;
@@ -1113,7 +1113,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     }
     public interface IUfoActions
     {
-        void OnThrust(InputAction.CallbackContext context);
+        void OnThrottle(InputAction.CallbackContext context);
         void OnRotate(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
     }

@@ -118,7 +118,7 @@
             "id": "98656b0e-af7b-4bb5-9767-6eb37b0f12f8",
             "actions": [
                 {
-                    "name": "Thrust",
+                    "name": "Throttle",
                     "type": "Value",
                     "id": "569bea06-9470-4993-91e8-eba568617ed0",
                     "expectedControlType": "Analog",
@@ -183,7 +183,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Manettes",
-                    "action": "Thrust",
+                    "action": "Throttle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
