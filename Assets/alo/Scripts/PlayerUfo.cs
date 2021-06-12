@@ -125,7 +125,7 @@ public class PlayerUfo : MonoBehaviour
     private void RotatePerformed(InputAction.CallbackContext context)
     {
         cyclic = context.ReadValue<float>();
-        targetPitch = -cyclic * maxPitch;
+        targetPitch = (int) (- cyclic * maxPitch);
         //Debug.Log(MethodBase.GetCurrentMethod().Name + "(): Direction: " + direction);
     }
 
@@ -197,7 +197,7 @@ public class PlayerUfo : MonoBehaviour
             pitch = -(360 - zRotation);
         }
 
-        return pitch;
+        return (int) pitch;
     }
 
     private void AutoCorrectPitch(int target, int correctionAngle)
@@ -269,7 +269,7 @@ public class PlayerUfo : MonoBehaviour
         float pitch = GetPitch();
 
         // TO DO: add case when Cyclic is reducing the pitch
-        if (Mathf.Abs(pitch) < maxPitch)
+        if (Mathf.Abs(pitch) <= maxPitch)
         {
             CorrectPitch(targetPitch, rotateMultiplicator);
         }
