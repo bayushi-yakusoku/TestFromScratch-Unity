@@ -250,7 +250,8 @@ public class PlayerUfo : MonoBehaviour
         float pitch = GetPitch();
 
         // TO DO: add case when Cyclic is reducing the pitch
-        if (Mathf.Abs(pitch) < maxPitch)
+        if (Mathf.Abs(pitch) <= maxPitch || 
+            Mathf.Sign(targetPitch) != Mathf.Sign(pitch))
         {
             float angle = -cyclic * rotateMultiplicator;
 
