@@ -140,6 +140,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Profile",
+                    "type": "Button",
+                    "id": "8a1b318a-f3c9-405c-8c86-9c88cf1a5cbf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "Klaxxon",
+                    "type": "Button",
+                    "id": "7a8df690-61f2-4ae0-86a5-ec8fdc9f2084",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -191,10 +207,32 @@
                     "name": "",
                     "id": "016a9e7c-3ce6-4e60-ae70-86912c0e96ae",
                     "path": "<Gamepad>/buttonSouth",
-                    "interactions": "Press",
+                    "interactions": "",
                     "processors": "",
                     "groups": "Manettes",
                     "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f7220fc8-228c-412f-81bf-fdc3882906d0",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Manettes",
+                    "action": "Profile",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4389d344-8d8c-4ca3-a0c4-78112a583a9e",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Manettes",
+                    "action": "Klaxxon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -153,6 +153,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Profile"",
+                    ""type"": ""Button"",
+                    ""id"": ""8a1b318a-f3c9-405c-8c86-9c88cf1a5cbf"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""Klaxxon"",
+                    ""type"": ""Button"",
+                    ""id"": ""7a8df690-61f2-4ae0-86a5-ec8fdc9f2084"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -204,10 +220,32 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""016a9e7c-3ce6-4e60-ae70-86912c0e96ae"",
                     ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Manettes"",
                     ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f7220fc8-228c-412f-81bf-fdc3882906d0"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Manettes"",
+                    ""action"": ""Profile"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4389d344-8d8c-4ca3-a0c4-78112a583a9e"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Manettes"",
+                    ""action"": ""Klaxxon"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -827,6 +865,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Ufo_Throttle = m_Ufo.FindAction("Throttle", throwIfNotFound: true);
         m_Ufo_Rotate = m_Ufo.FindAction("Rotate", throwIfNotFound: true);
         m_Ufo_Fire = m_Ufo.FindAction("Fire", throwIfNotFound: true);
+        m_Ufo_Profile = m_Ufo.FindAction("Profile", throwIfNotFound: true);
+        m_Ufo_Klaxxon = m_Ufo.FindAction("Klaxxon", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -933,6 +973,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Ufo_Throttle;
     private readonly InputAction m_Ufo_Rotate;
     private readonly InputAction m_Ufo_Fire;
+    private readonly InputAction m_Ufo_Profile;
+    private readonly InputAction m_Ufo_Klaxxon;
     public struct UfoActions
     {
         private @PlayerControls m_Wrapper;
@@ -940,6 +982,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Throttle => m_Wrapper.m_Ufo_Throttle;
         public InputAction @Rotate => m_Wrapper.m_Ufo_Rotate;
         public InputAction @Fire => m_Wrapper.m_Ufo_Fire;
+        public InputAction @Profile => m_Wrapper.m_Ufo_Profile;
+        public InputAction @Klaxxon => m_Wrapper.m_Ufo_Klaxxon;
         public InputActionMap Get() { return m_Wrapper.m_Ufo; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -958,6 +1002,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Fire.started -= m_Wrapper.m_UfoActionsCallbackInterface.OnFire;
                 @Fire.performed -= m_Wrapper.m_UfoActionsCallbackInterface.OnFire;
                 @Fire.canceled -= m_Wrapper.m_UfoActionsCallbackInterface.OnFire;
+                @Profile.started -= m_Wrapper.m_UfoActionsCallbackInterface.OnProfile;
+                @Profile.performed -= m_Wrapper.m_UfoActionsCallbackInterface.OnProfile;
+                @Profile.canceled -= m_Wrapper.m_UfoActionsCallbackInterface.OnProfile;
+                @Klaxxon.started -= m_Wrapper.m_UfoActionsCallbackInterface.OnKlaxxon;
+                @Klaxxon.performed -= m_Wrapper.m_UfoActionsCallbackInterface.OnKlaxxon;
+                @Klaxxon.canceled -= m_Wrapper.m_UfoActionsCallbackInterface.OnKlaxxon;
             }
             m_Wrapper.m_UfoActionsCallbackInterface = instance;
             if (instance != null)
@@ -971,6 +1021,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Fire.started += instance.OnFire;
                 @Fire.performed += instance.OnFire;
                 @Fire.canceled += instance.OnFire;
+                @Profile.started += instance.OnProfile;
+                @Profile.performed += instance.OnProfile;
+                @Profile.canceled += instance.OnProfile;
+                @Klaxxon.started += instance.OnKlaxxon;
+                @Klaxxon.performed += instance.OnKlaxxon;
+                @Klaxxon.canceled += instance.OnKlaxxon;
             }
         }
     }
@@ -1116,6 +1172,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnThrottle(InputAction.CallbackContext context);
         void OnRotate(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
+        void OnProfile(InputAction.CallbackContext context);
+        void OnKlaxxon(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

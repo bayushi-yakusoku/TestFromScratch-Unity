@@ -115,11 +115,25 @@ public class PlayerUfo : MonoBehaviour
 
         playerControls.Ufo.Fire.performed += FirePerformed;
 
+        playerControls.Ufo.Klaxxon.performed += KlaxxonPerformed;
+
+        playerControls.Ufo.Profile.performed += ProfilePerformed;
+
         playerControls.Ufo.Throttle.performed += ThrottlePerformed;
         playerControls.Ufo.Throttle.canceled += ThrottleCanceled; ;
 
         playerControls.Ufo.Rotate.performed += RotatePerformed;
         playerControls.Ufo.Rotate.canceled += RotateCanceled;
+    }
+
+    private void ProfilePerformed(InputAction.CallbackContext obj)
+    {
+        Debug.Log(MethodBase.GetCurrentMethod().Name + "(): ... ");
+    }
+
+    private void KlaxxonPerformed(InputAction.CallbackContext context)
+    {
+        Debug.Log(MethodBase.GetCurrentMethod().Name + "(): ... ");
     }
 
     private void RotatePerformed(InputAction.CallbackContext context)
