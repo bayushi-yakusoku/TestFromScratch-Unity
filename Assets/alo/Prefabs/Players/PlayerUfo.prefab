@@ -154,7 +154,7 @@ MonoBehaviour:
   enginePower: 50
   rotateMultiplicator: 5
   deltaModeDirection: 0
-  maxPitch: 45
+  maxPitch: 60
   correctionAngle: 2
   runTimeInfo:
     collective: 0
