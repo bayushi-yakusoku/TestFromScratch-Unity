@@ -22,6 +22,7 @@ public class PlayerUfo : MonoBehaviour
 {
     [SerializeField] private Renderer rendererBody;
     [SerializeField] private Collider2D colliderBody;
+    [SerializeField] private Animator animator;
     [SerializeField] private float enginePower;
     [SerializeField] private float rotateMultiplicator;
     [SerializeField] private bool deltaModeDirection = true;
@@ -43,6 +44,8 @@ public class PlayerUfo : MonoBehaviour
 
     private float cyclic = 0f;
     public float Cyclic { get => cyclic; }
+
+    private bool isProfile = false;
 
     public string PlayerName { get; set; } = "Player1";
 
@@ -129,6 +132,10 @@ public class PlayerUfo : MonoBehaviour
     private void ProfilePerformed(InputAction.CallbackContext obj)
     {
         Debug.Log(MethodBase.GetCurrentMethod().Name + "(): ... ");
+
+        isProfile = (isProfile == true) ? false : true;
+
+        animator.SetBool("isProfile", isProfile);
     }
 
     private void KlaxxonPerformed(InputAction.CallbackContext context)
